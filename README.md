@@ -15,3 +15,12 @@
 ## Run the server
 - Finally, you can run your server with the command `python manage.py runserver`.
 - You will find the website at the location `http://127.0.0.1:8000/`.
+
+## References
+- https://www.kaggle.com/neha1703/movie-genre-from-its-poster/discussion/35485
+- http://ai.stanford.edu/~amaas/data/sentiment/
+- https://www.mongodb.com/
+- https://data-flair.training/blogs/django-tutorial/
+- https://www.kaggle.com/rounakbanik/the-movies-dataset
+- https://www.kaggle.com/fabiendaniel/film-recommendation-engine
+- https://www.kaggle.com/tmdb/tmdb-movie-metadata

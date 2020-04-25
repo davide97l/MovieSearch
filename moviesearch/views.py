@@ -18,7 +18,6 @@ def clean_movie(movie, cut_description=None):
     """Clean movie fields"""
     if cut_description is not None and len(movie["description"]) > cut_description:  # cut overview
         movie["description"] = movie["description"][:cut_description] + "..."
-    print(movie["imdb_id"])
     if type(movie["imdb_id"]) != int and type(movie["imdb_id"]) != float:  # extract imdb ID
         movie["imdb_id"] = int(movie["imdb_id"][3:])
     movie["runtime"] = int(movie["runtime"])
@@ -118,7 +117,6 @@ def details(request):
         movie = retrieve_movie(movies_db, int(request.POST['movie_id']))
         reviews = reviews_db.find_one({"imbd_id": movie["imdb_id"]}, {"_id": 0})
         print("Imdb ID", movie["imdb_id"])
-        print(reviews)
 
         reviews_list = []
         if reviews is not None:
@@ -130,4 +128,4 @@ def details(request):
 
         return render(request, os.path.join('templates/details.html'),
                       {'movie': movie, 'similar_movies': similar_movies, 'reviews': reviews_list})
-    return render(request, os.path.join('templates/index.html'))
+    return render(request, os.path.join('templates/index.html'))p

@@ -1,6 +1,6 @@
 # MovieSearch
 
-...
+**MovieSearch** is a content specific search engine with the aim to retrieve **movies** informations given the contents of the user's query. The search engine relies on the **OkapiBM25** algorithm and takes into consideration the overview, the title, the name of the director, of the actors and of the production companies of each movie. The backend has been developed with the framework **Django** while the fronted extensively relies on **Bootstrap 4**. Movies data, reviews and a reverse index to speed up the research are stored in a **MongoDB** database. It has also been implemented a movies **recommendation system** to recommend similar movies exploiting a nearest neighbors machine learning algorithm. Moreover, when uploading new reviews, it is possible to use **Bert** to predict their feedback which can be positive or negative. The model has an accuracy on the training set (ImDB movies review dataset) of over 95% and relies on the powerful framework **ktrain**.
 
 ## Environment configuration
 - Download movies posters dataset from https://www.kaggle.com/neha1703/movie-genre-from-its-poster/discussion/35485 and put all images into the folder `moviesearch/static/posters.txt`.

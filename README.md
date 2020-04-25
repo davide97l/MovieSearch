@@ -7,9 +7,13 @@
 <img src="imgs/search_results.png" height="60%" width="60%" ></a>
 </p>
 <hr>
+<p align="center">
 <img src="imgs/main_view.png"height="60%" width="60%" ></a>
+</p>
 <hr>
+<p align="center">
 <img src="imgs/similar_movies.png" height="60%" width="60%" ></a>
+</p>
 <hr>
 
 ## Environment configuration

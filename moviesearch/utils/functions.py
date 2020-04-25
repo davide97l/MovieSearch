@@ -42,6 +42,8 @@ def exists(value):
 def preprocess_list(array):
     """Apply preprocess_text to a list of sentences"""
     tokens = []
+    if array is None:
+        return tokens
     for s in array:
         if s is not None:
             tokens += preprocess_text(s)

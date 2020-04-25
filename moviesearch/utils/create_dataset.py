@@ -486,3 +486,22 @@ if __name__ == '__main__':
     sim_indices = find_similars(df, 2, n_neighbors, n_recommendations, verbose=True)
     print(sim_indices)
 
+
+    train_positive_urls = "aclImdb/train/urls_pos.txt"
+    train_negative_urls = "aclImdb/train/urls_neg.txt"
+    test_positive_urls = "aclImdb/test/urls_pos.txt"
+    test_negative_urls = "aclImdb/test/urls_neg.txt"
+    urls = [train_positive_urls, train_negative_urls, test_positive_urls]
+    list1 = df['imdb_id'].tolist()
+    set1 = set(list1)
+    list2 = []
+    for j, file in enumerate(urls):
+        f = open(file, "r")
+        lines = f.readlines()
+        for l in lines:
+            l1 = l.split("/")[-2]
+            if l1 not in list2:
+                list2.append(l1)
+        f.close()
+    set2 = set(list2)
+    print("Movies with review:", len(set1.intersection(set2)))  # 500+

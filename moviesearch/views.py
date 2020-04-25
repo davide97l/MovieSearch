@@ -18,7 +18,8 @@ def clean_movie(movie, cut_description=None):
     """Clean movie fields"""
     if cut_description is not None and len(movie["description"]) > cut_description:  # cut overview
         movie["description"] = movie["description"][:cut_description] + "..."
-    if type(movie["imdb_id"]) != int:  # extract imdb ID
+    print(movie["imdb_id"])
+    if type(movie["imdb_id"]) != int and type(movie["imdb_id"]) != float:  # extract imdb ID
         movie["imdb_id"] = int(movie["imdb_id"][3:])
     movie["runtime"] = int(movie["runtime"])
     movie["release_date"] = int(movie["release_date"])
@@ -81,10 +82,17 @@ def index(request):
             movies.append(doc)
             title = preprocess_text(doc["title"])
             description = preprocess_text(doc["description"])
-            actors = preprocess_list(doc["actors"])
-            companies = preprocess_list(doc["production_companies"])
-            director = preprocess_text(doc["director_name"])
-            corpus.append(title + description + actors + companies + director)  # words in title count as two
+            local_corpus = title + description
+            if doc["actors"] is not None:
+                actors = preprocess_list(doc["actors"])
+                local_corpus += actors
+            if doc["production_companies"] is not None:
+                companies = preprocess_list(doc["production_companies"])
+                local_corpus += companies
+            if doc["director_name"] is not None:
+                director = preprocess_text(doc["director_name"])
+                local_corpus += director
+            corpus.append(local_corpus)  # words in title count as two
 
         print("Ranking movies...")
         bm25 = BM25Okapi(corpus)

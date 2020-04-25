@@ -1,3 +1,6 @@
+# this file trains a BERT model to make prediction on the reviews, actually this feature has not been implemented
+# due to hardware limitations
+
 import ktrain
 from ktrain import text
 import glob

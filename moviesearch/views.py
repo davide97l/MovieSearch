@@ -81,7 +81,7 @@ def index(request):
             movies.append(doc)
             title = preprocess_text(doc["title"])
             description = preprocess_text(doc["description"])
-            local_corpus = title + description
+            local_corpus = title + title + description  # title repeated 2 times to give more importance ot the tile
             if doc["actors"] is not None:
                 actors = preprocess_list(doc["actors"])
                 local_corpus += actors
@@ -98,7 +98,7 @@ def index(request):
         scores = bm25.get_scores(query_terms)  # get the score of each document given the query
         n = 20
         top_n = np.argsort(scores)[::-1][:n]  # indexes of the top n documents
-        top_n_movies = [movie for i, movie in enumerate(movies) if i in top_n]
+        top_n_movies = [movies[i] for i in top_n]
         for movie in top_n_movies:
             clean_movie(movie, 400)
         print("Top-{} movies".format(n))

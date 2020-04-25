@@ -17,7 +17,7 @@
 <hr>
 
 ## Environment configuration
-- Download movies posters dataset from https://www.kaggle.com/neha1703/movie-genre-from-its-poster/discussion/35485 and put all images into the folder `moviesearch/static/posters.txt`.
+- Download movies posters dataset from https://www.kaggle.com/neha1703/movie-genre-from-its-poster/discussion/35485 and put all images into the folder `moviesearch/static/posters`.
 - Download movies reviews from http://ai.stanford.edu/~amaas/data/sentiment/ and put the folder `aclImdb` in the path `moviesearch\utils`.
 - The website relies on MongoDB, make sure it is running on your machine before going on. Otherwise you can download and install it from https://www.mongodb.com/.
 - Install all dependencies with the command: `pip install requirements.txt`.

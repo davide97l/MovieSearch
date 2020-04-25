@@ -5,6 +5,7 @@
 <img src="imgs/search_results.png" align="left" height="50%" width="50%" ></a>
 <img src="imgs/main_view.png" align="left" height="50%" width="50%" ></a>
 <img src="imgs/similar_movies.png" align="left" height="50%" width="50%" ></a>
+<br>
 
 ## Environment configuration
 - Download movies posters dataset from https://www.kaggle.com/neha1703/movie-genre-from-its-poster/discussion/35485 and put all images into the folder `moviesearch/static/posters.txt`.

@@ -128,4 +128,4 @@ def details(request):
 
         return render(request, os.path.join('templates/details.html'),
                       {'movie': movie, 'similar_movies': similar_movies, 'reviews': reviews_list})
-    return render(request, os.path.join('templates/index.html'))p
+    return render(request, os.path.join('templates/index.html'))

@@ -23,8 +23,8 @@
 - Install all dependencies with the command: `pip install requirements.txt`.
 
 ## Database preparation
-- To clean, preprocess and upload movies data run the command `python upload_movies.py`. Note that the execution of this process includes computing movies recommendations for about 5000 movies with with nearest neightbors, thus it may take a few hours depending on your hardware.
-- To clean, preprocess and upload movies reviews run the command `python upload_reviews.py`. It will upload around 50k movies reviews.
+- To clean, preprocess and upload movies data run the command `python moviesearch/utils/upload_movies.py`. Note that the execution of this process includes computing movies recommendations for about 5000 movies with with nearest neightbors, thus it may take a few hours depending on your hardware.
+- To clean, preprocess and upload movies reviews run the command `python moviesearch/utils/upload_reviews.py`. It will upload around 50k movies reviews.
 
 ## Run the server
 - Finally, you can run your server with the command `python manage.py runserver`.
